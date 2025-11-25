@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Main layout with:
+     - Main currencies list
+     - Search bar
+     - All currencies list
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp">
+
+    <TextView
+        android:id="@+id/salutation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="Welcome to Mobile Platform Development" />
+
+    <Button
+        android:id="@+id/startButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Press to get data" />
+
+    <TextView
+        android:id="@+id/acknowledgement"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:text="Contains Fx Currency Exchange data" />
+
+    <!-- MAIN CURRENCIES SECTION -->
+    <TextView
+        android:id="@+id/mainCurrenciesLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Main currencies (GBP → USD, EUR, JPY):"
+        android:textStyle="bold"
+        android:paddingTop="8dp" />
+
+    <ListView
+        android:id="@+id/listMainCurrencies"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- ALL CURRENCIES SECTION + SEARCH -->
+    <TextView
+        android:id="@+id/allCurrenciesLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="All currencies:"
+        android:textStyle="bold"
+        android:paddingTop="8dp" />
+
+    <!-- Search row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp">
+
+        <EditText
+            android:id="@+id/editSearch"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Search by code, name, country..."
+            android:singleLine="true" />
+
+        <Button
+            android:id="@+id/btnSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Search" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/listAllCurrencies"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2" />
+
+</LinearLayout>
